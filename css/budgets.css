@@ -1,7 +1,0 @@
-.cpu, .memory, .ghes {
-  color: red;
-  border: 1px solid #333;
-  padding: 3px;
-  border-radius: 4px;
-  font-size: larger;
-}
