@@ -1,56 +1,65 @@
-var tangle = new Tangle (document.getElementById("budgets"), {
-  initialize: function () {
-    this.cpu = 2;
-    this.memory = 16;
-    this.ghes = "2.0";
-  },
-  update: function () {
-    var ghuni_budget = this.memory * 0.25;
-    if (ghuni_budget > 18) {
-      this.githubunicorn = 30;
-    } else if (ghuni_budget > 16) {
-      this.githubunicorn = 24;
-    } else if (ghuni_budget > 8) {
-      this.githubunicorn = 16;
-    } else if (ghuni_budget > 4) {
-      this.githubunicorn = 8;
-    } else {
-      this.githubunicorn = 4;
-    }
-
-    var gherni_budget = this.memory * 0.10;
-    if (gherni_budget > 15.4) {
-      this.githubernicorn = 30;
-    } else if (gherni_budget > 7.2) {
-      this.githubernicorn = 15;
-    } else if (gherni_budget > 6.4) {
-      this.githubernicorn = 12;
-    } else if (gherni_budget > 3.2) {
-      this.githubernicorn = 8;
-    } else if (gherni_budget > 1.6) {
-      this.githubernicorn = 4;
-    } else {
-      this.githubernicorn = 2;
-    }
-
-    var gauni_budget = this.memory * 0.25;
-    if (gauni_budget > 16) {
-      this.gitauthunicorn = 6;
-    } else if (gauni_budget > 6) {
-      this.gitauthunicorn = 4;
-    } else {
-      this.gitauthunicorn = 2;
-    }
-
-    var total_workers = (this.cpu * 1.5).floor();
-    if ((this.memory * 0.25) > 2) {
-      if (total_workers > 18) {
-        total_workers = 18;
-      }
-    } else {
-      total_workers = 4;
-    }
-
-    this.workers = total_workers;
+function github_unicorns(memory) {
+  var ghuni_budget = memory * 0.25;
+  if (ghuni_budget > 18) {
+    return 30;
   }
+  if (ghuni_budget > 16) {
+    return 24;
+  }
+  if (ghuni_budget > 8) {
+    return 16;
+  }
+  if (ghuni_budget > 4) {
+    return 8;
+  }
+  return 4;
+}
+
+function github_ernicorns(memory) {
+  var gherni_budget = memory * 0.10;
+  if (gherni_budget > 15.4) {
+    return 30;
+  }
+  if (gherni_budget > 7.2) {
+    return 15;
+  }
+  if (gherni_budget > 6.4) {
+    return 12;
+  }
+  if (gherni_budget > 3.2) {
+    return 8;
+  }
+  if (gherni_budget > 1.6) {
+    return 4;
+  }
+  return 2;
+}
+
+function gitauth_unicorns(memory) {
+  var gauni_budget = memory * 0.25;
+  if (gauni_budget > 16) {
+    return 6;
+  }
+  if (gauni_budget > 6) {
+    return 4;
+  }
+  return 2;
+}
+
+function total_workers(cpu) {
+  var total_workers = Math.floor(cpu * 1.5);
+  if (total_workers > 18) {
+    return 18;
+  }
+  return total_workers;
+}
+
+document.getElementById('memory').addEventListener('change', function() {
+  document.getElementById('githubunicorns').innerHTML = github_unicorns(this.value);
+  document.getElementById('githubernicorns').innerHTML = github_ernicorns(this.value);
+  document.getElementById('gitauthunicorns').innerHTML = gitauth_unicorns(this.value);
+});
+
+document.getElementById('cpus').addEventListener('change', function() {
+  document.getElementById('highworkers').innerHTML = total_workers(this.value) - 2;
 });

@@ -1,7 +1,24 @@
-.cpu, .memory, .ghes {
-  color: red;
-  border: 1px solid #333;
-  padding: 3px;
-  border-radius: 4px;
-  font-size: larger;
+.header {
+  text-align: center;
+}
+.row {
+  padding-bottom: 20px;
+}
+.selector {
+  background: #f7f7f9;
+  border-radius: 10px;
+  border: 1px #775 solid;
+  text-align: center;
+  padding: 10px;
+}
+.bignumber {
+  font-size: 5rem;
+  font-weight: 800;
+  display: block;
+  margin: 0 auto;
+}
+input.bignumber {
+  height: 8rem;
+  width: 20rem;
+  text-align: center;
 }
