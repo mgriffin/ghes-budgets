@@ -7,8 +7,6 @@
     <link rel="stylesheet" media="screen" href="css/normalize.css">
     <link rel="stylesheet" media="screen" href="css/skeleton.css">
     <link rel="stylesheet" media="screen" href="css/budgets.css">
-    <link rel="stylesheet" media="screen" href="css/TangleKit.css">
-
   </head>
   <body>
     <div class="container">
@@ -19,44 +17,45 @@
       <div class="content">
         <div class="row">
           <div class="six columns selector">
-            <input type="number" class="bignumber" min="2" value="2">
+            <input id="cpus" type="number" class="bignumber" min="2" value="2">
             CPUs
           </div>
           <div class="six columns selector">
-            <input type="number" class="bignumber" min="16" value="16">
+            <input id="memory" type="number" class="bignumber" min="16" value="16">
             GB RAM
           </div>
         </div>
         <hr>
         <div class="row">
           <div class="four columns selector">
-            <span class="bignumber">2</span>
+            <span id="githubunicorns" class="bignumber">4</span>
             GitHub Unicorns
           </div>
           <div class="four columns selector">
-            <span class="bignumber">16</span>
-            Ernicorns
+            <span id="githubernicorns" class="bignumber">2</span>
+            Ernicorns (on a replica)
           </div>
           <div class="four columns selector">
-            <span class="bignumber">16</span>
+            <span id="gitauthunicorns" class="bignumber">2</span>
             Gitauth Unicorns
           </div>
         </div>
         <div class="row">
           <div class="four columns selector">
-            <span class="bignumber">2</span>
+            <span id="highworkers" class="bignumber">2</span>
             High workers
           </div>
           <div class="four columns selector">
-            <span class="bignumber">16</span>
+            <span class="bignumber">2</span>
             Low workers
           </div>
           <div class="four columns selector">
-            <span class="bignumber">16</span>
+            <span class="bignumber">1</span>
             Maintenance workers
           </div>
         </div>
       </div>
     </div>
+    <script type="text/javascript" src="js/budgets.js"></script>
   </body>
 </html>
