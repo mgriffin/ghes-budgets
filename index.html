@@ -6,43 +6,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link rel="stylesheet" media="screen" href="css/normalize.css">
     <link rel="stylesheet" media="screen" href="css/skeleton.css">
+    <link rel="stylesheet" media="screen" href="css/budgets.css">
     <link rel="stylesheet" media="screen" href="css/TangleKit.css">
 
   </head>
   <body>
     <div class="container">
-      <div class="content" id="budgets">
-        <h2>GitHub Enterprise Budgets</h2>
+      <div class="header">
+        <h1>GitHub Enterprise Budgets Calculator</h1>
         <p>GitHub Enterprise starts a different number of some worker processes depending on the CPU and memory available to an instance.</p>
-        <p>I have <span class="TKAdjustableNumber" data-var="cpu" data-min="2" data-max="96"> CPUs</span> and
-        <span class="TKAdjustableNumber" data-var="memory" data-min="16" data-max="256">GB</span> of RAM and I'm using GitHub Enterprise
-        <span class="TKAdjustableNumber" data-var="ghes"></span>.</p>
-        <p>This gives me these number of workers:</p>
-        <table>
-          <thead>
-            <tr>
-              <th>GitHub Unicorn</th>
-              <th>GitHub Ernicorn</th>
-              <th>Gitauth Unicorn</th>
-              <th colspan="3">Resque</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td data-var="githubunicorn"></td>
-              <td data-var="githubernicorn"></td>
-              <td data-var="gitauthunicorn"></td>
-              <td data-var="workers"></td>
-            </tr>
-          </tbody>
-        </table>
+      </div>
+      <div class="content">
+        <div class="row">
+          <div class="six columns selector">
+            <input type="number" class="bignumber" min="2" value="2">
+            CPUs
+          </div>
+          <div class="six columns selector">
+            <input type="number" class="bignumber" min="16" value="16">
+            GB RAM
+          </div>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="four columns selector">
+            <span class="bignumber">2</span>
+            GitHub Unicorns
+          </div>
+          <div class="four columns selector">
+            <span class="bignumber">16</span>
+            Ernicorns
+          </div>
+          <div class="four columns selector">
+            <span class="bignumber">16</span>
+            Gitauth Unicorns
+          </div>
+        </div>
+        <div class="row">
+          <div class="four columns selector">
+            <span class="bignumber">2</span>
+            High workers
+          </div>
+          <div class="four columns selector">
+            <span class="bignumber">16</span>
+            Low workers
+          </div>
+          <div class="four columns selector">
+            <span class="bignumber">16</span>
+            Maintenance workers
+          </div>
+        </div>
       </div>
     </div>
-		<script type="text/javascript" src="js/Tangle.js"></script>
-		<script type="text/javascript" src="js/TangleKit/mootools.js"></script>
-		<script type="text/javascript" src="js/TangleKit/sprintf.js"></script>
-		<script type="text/javascript" src="js/TangleKit/BVTouchable.js"></script>
-		<script type="text/javascript" src="js/TangleKit/TangleKit.js"></script>
-		<script type="text/javascript" src="js/budgets.js"></script>
   </body>
 </html>
