@@ -54,7 +54,7 @@ function total_workers(cpu) {
   return total_workers;
 }
 
-document.getElementById('memory').addEventListener('change', function() {
+document.getElementById('memory').addEventListener('input', function() {
   document.getElementById('githubunicorns').innerHTML = github_unicorns(this.value);
   document.getElementById('githubernicorns').innerHTML = github_ernicorns(this.value);
   document.getElementById('gitauthunicorns').innerHTML = gitauth_unicorns(this.value);
