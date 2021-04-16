@@ -55,11 +55,17 @@ function total_workers(cpu) {
 }
 
 document.getElementById('memory').addEventListener('input', function() {
+  if (this.value < 16) {
+    this.value = 16;
+  }
   document.getElementById('githubunicorns').innerHTML = github_unicorns(this.value);
   document.getElementById('githubernicorns').innerHTML = github_ernicorns(this.value);
   document.getElementById('gitauthunicorns').innerHTML = gitauth_unicorns(this.value);
 });
 
 document.getElementById('cpus').addEventListener('change', function() {
+  if (this.value < 2) {
+    this.value = 2;
+  }
   document.getElementById('highworkers').innerHTML = total_workers(this.value) - 2;
 });
