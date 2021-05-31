@@ -1,0 +1,11 @@
+{
+  "dependencies": {
+    "mocha": "^8.4.0"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "devDependencies": {
+    "jshint": "^2.13.0"
+  }
+}
