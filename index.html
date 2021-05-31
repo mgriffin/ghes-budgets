@@ -56,6 +56,24 @@
         </div>
       </div>
     </div>
-    <script type="text/javascript" src="js/budgets.js"></script>
+    <script type="module" src="js/budgets.js"></script>
+    <script type="text/javascript">
+      import { budget } from './js/budgets.js';
+      document.getElementById('memory').addEventListener('input', function() {
+              if (this.value < 16) {
+                      this.value = 16;
+                    }
+              document.getElementById('githubunicorns').innerHTML = get.github_unicorns('2.22', this.value);
+              document.getElementById('githubernicorns').innerHTML = get.github_ernicorns('2.22', this.value);
+              document.getElementById('gitauthunicorns').innerHTML = get.gitauth_unicorns('2.22', this.value);
+            });
+
+      document.getElementById('cpus').addEventListener('change', function() {
+              if (this.value < 2) {
+                      this.value = 2;
+                    }
+              document.getElementById('highworkers').innerHTML = total_workers(this.value) - 2;
+            });
+    </script>
   </body>
 </html>
