@@ -1,4 +1,4 @@
-let budget = {};
+export const budget = {};
 
 budget.github_unicorns = function(ghes_version, memory) {
   if (ghes_version == '2.20') {
@@ -8,7 +8,7 @@ budget.github_unicorns = function(ghes_version, memory) {
   }
 }
 
-github_unicorns_2_20 = function(memory) {
+function github_unicorns_2_20(memory) {
   var ghuni_budget = memory * 0.25;
   if (ghuni_budget > 18) {
     return 30;
@@ -25,7 +25,7 @@ github_unicorns_2_20 = function(memory) {
   return 4;
 }
 
-github_unicorns_2_22 = function(memory) {
+function github_unicorns_2_22(memory) {
   var ghuni_budget = memory * 0.25;
   if (ghuni_budget >= 18) {
     return 30;
@@ -50,7 +50,7 @@ budget.github_ernicorns = function(ghes_version, memory) {
   }
 }
 
-github_ernicorns_2_20 = function(memory) {
+function github_ernicorns_2_20(memory) {
   var gherni_budget = memory * 0.10;
   if (gherni_budget > 15.4) {
     return 30;
@@ -70,7 +70,7 @@ github_ernicorns_2_20 = function(memory) {
   return 2;
 }
 
-github_ernicorns_2_22 = function(memory) {
+function github_ernicorns_2_22(memory) {
   var gherni_budget = memory * 0.10;
   if (gherni_budget >= 15.4) {
     return 30;
@@ -98,7 +98,7 @@ budget.gitauth_unicorns = function(ghes_version, memory) {
   }
 }
 
-gitauth_unicorns_2_20 = function(memory) {
+function gitauth_unicorns_2_20(memory) {
   var gauni_budget = memory * 0.25;
   if (gauni_budget > 16) {
     return 6;
@@ -109,7 +109,7 @@ gitauth_unicorns_2_20 = function(memory) {
   return 2;
 }
 
-gitauth_unicorns_2_22 = function(memory) {
+function gitauth_unicorns_2_22(memory) {
   var gauni_budget = memory * 0.25;
   if (gauni_budget >= 16) {
     return 6;
@@ -120,12 +120,10 @@ gitauth_unicorns_2_22 = function(memory) {
   return 2;
 }
 
-total_workers = function(cpu) {
+budget.total_workers = function(cpu) {
   var total_workers = Math.floor(cpu * 1.5);
   if (total_workers > 18) {
     return 18;
   }
   return total_workers;
 }
-
-module.exports = budget;
