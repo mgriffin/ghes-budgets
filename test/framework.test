@@ -1,15 +1,14 @@
 var assert = require('assert');
-let budget = require("../js/budgets.js");
 
 assert_budgets = function(ghes_version, cpus, host_mem, unicorn, ernicorn, gitauth, resque) {
 	it('should should return ' + unicorn + ' unicorns when there is ' + host_mem + 'GB of RAM', function() {
-		assert.equal(unicorn, budget.github_unicorns(ghes_version, host_mem));
+		assert.equal(unicorn, github_unicorns(ghes_version, host_mem));
 	});
 	it('should should return ' + ernicorn + ' ernicorns when there is ' + host_mem + 'GB of RAM', function() {
-		assert.equal(ernicorn, budget.github_ernicorns(ghes_version, host_mem));
+		assert.equal(ernicorn, github_ernicorns(ghes_version, host_mem));
 	});
 	it('should should return ' + gitauth + ' gitauth when there is ' + host_mem + 'GB of RAM', function() {
-		assert.equal(gitauth, budget.gitauth_unicorns(ghes_version, host_mem));
+		assert.equal(gitauth, gitauth_unicorns(ghes_version, host_mem));
 	});
 }
 

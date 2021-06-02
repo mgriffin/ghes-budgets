@@ -1,6 +1,4 @@
-export const budget = {};
-
-budget.github_unicorns = function(ghes_version, memory) {
+function github_unicorns(ghes_version, memory) {
   if (ghes_version == '2.20') {
     return github_unicorns_2_20(memory);
   } else if (ghes_version == '2.22') {
@@ -42,7 +40,7 @@ function github_unicorns_2_22(memory) {
   return 4;
 }
 
-budget.github_ernicorns = function(ghes_version, memory) {
+function github_ernicorns(ghes_version, memory) {
   if (ghes_version == '2.20') {
     return github_ernicorns_2_20(memory);
   } else if (ghes_version == '2.22') {
@@ -90,7 +88,7 @@ function github_ernicorns_2_22(memory) {
   return 2;
 }
 
-budget.gitauth_unicorns = function(ghes_version, memory) {
+function gitauth_unicorns(ghes_version, memory) {
   if (ghes_version == '2.20') {
     return gitauth_unicorns_2_20(memory);
   } else if (ghes_version == '2.22') {
@@ -120,7 +118,7 @@ function gitauth_unicorns_2_22(memory) {
   return 2;
 }
 
-budget.total_workers = function(cpu) {
+function total_workers(cpu) {
   var total_workers = Math.floor(cpu * 1.5);
   if (total_workers > 18) {
     return 18;
