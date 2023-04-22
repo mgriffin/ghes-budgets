@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "mocha": "^8.4.0"
+    "mocha": "^10.2.0"
   },
   "scripts": {
     "test": "mocha"
