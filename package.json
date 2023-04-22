@@ -6,6 +6,6 @@
     "test": "mocha"
   },
   "devDependencies": {
-    "jshint": "^2.13.0"
+    "jshint": "^2.13.6"
   }
 }
