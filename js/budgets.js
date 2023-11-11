@@ -1,5 +1,5 @@
 function github_unicorns(ghes_version, memory) {
-  if (ghes_version == '2.20') {
+  if (ghes_version == '2.20' || ghes_version == '3.0') {
     return github_unicorns_2_20(memory);
   } else if (ghes_version == '2.22') {
     return github_unicorns_2_22(memory);
@@ -41,7 +41,7 @@ function github_unicorns_2_22(memory) {
 }
 
 function github_ernicorns(ghes_version, memory) {
-  if (ghes_version == '2.20') {
+  if (ghes_version == '2.20' || ghes_version == '3.0') {
     return github_ernicorns_2_20(memory);
   } else if (ghes_version == '2.22') {
     return github_ernicorns_2_22(memory);
@@ -89,7 +89,7 @@ function github_ernicorns_2_22(memory) {
 }
 
 function gitauth_unicorns(ghes_version, memory) {
-  if (ghes_version == '2.20') {
+  if (ghes_version == '2.20' || ghes_version == '3.0') {
     return gitauth_unicorns_2_20(memory);
   } else if (ghes_version == '2.22') {
     return gitauth_unicorns_2_22(memory);
